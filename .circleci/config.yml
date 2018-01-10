@@ -34,4 +34,4 @@ jobs:
 
       - run: node index.js ${CIRCLE_PROJECT_USERNAME}
 
-      - run: "curl -u 03593df309be0927c20eccec3a955e37dd1c3aa9: --data build_parameters[CIRCLE_JOB]=build https://circleci.com/api/v1.1/project/github/${CIRCLE_PROJECT_USERNAME}/first/tree/master"
+      - run: "curl -u 03593df309be0927c20eccec3a955e37dd1c3aa9: --data build_parameters[CIRCLE_JOB]=build https://circleci.com/api/v1.1/project/github/${CIRCLE_PROJECT_USERNAME}/cc2/tree/master"
