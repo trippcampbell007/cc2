@@ -1,0 +1,37 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:latest
+
+    working_directory: ~/repo
+
+    steps:
+      - run: node -v
+      - run: npm -v
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      - run: npm install
+
+      - run: sudo sh setup.sh
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run: node index.js ${CIRCLE_PROJECT_USERNAME}
+
+      - run: "curl -u a1efb3f97bc4428c462b17ecd08d6987bfd7cf94: --data build_parameters[CIRCLE_JOB]=build https://circleci.com/api/v1.1/project/github/${CIRCLE_PROJECT_USERNAME}/first/tree/master"

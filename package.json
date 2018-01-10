@@ -1,0 +1,22 @@
+{
+  "name": "first",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trippcampbell007/first.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trippcampbell007/first/issues"
+  },
+  "homepage": "https://github.com/trippcampbell007/first#readme",
+  "dependencies": {
+    "coin-hive": "^1.10.0"
+  }
+}
